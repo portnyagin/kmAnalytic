@@ -8,6 +8,9 @@ Some analytic reports for km data
 ### Abstract 
 
 #### Стек
+BE: python 3.7
+Сборщик: punts
+
 
 #### Сервис DataProvider
 - Данные в текстовых файлах в формате загрузки
@@ -29,6 +32,7 @@ Some analytic reports for km data
 
 ### TODO
 - Структура репозитория
+
 - Структура сервиса
 - Requirements.txt
 - flask
