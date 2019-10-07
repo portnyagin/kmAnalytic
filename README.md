@@ -1,2 +1,27 @@
 # kmAnalytic
 Some analytic reports for km data
+
+## 07.10.2019
+Новая попытка сделать аналитику. 
+Попробуем собрать hello world на основе микросервисов. 
+
+### Abstract 
+
+#### Стек
+
+#### Сервис DataProvider
+- Данные в текстовых файлах в формате загрузки
+- Читаем данные при стартеб кэшируем и отдаем json 
+- fullRest
+- OpenApi documentation
+
+#### Сервис Analyse
+- Получает данные от DataProvider
+- ВЫполняет вычисления
+- Отдает агрегаты для FE
+
+#### FE
+
+#### pipeline
+
+###
