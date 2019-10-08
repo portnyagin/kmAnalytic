@@ -21,3 +21,5 @@
 dist
 .pids
 .pants.workdir.file_lock
+venv
+./src/be/RawData/data

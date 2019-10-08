@@ -1,0 +1,5 @@
+Flask
+connexion
+Flask-Injector
+connexion[swagger-ui]
+injector==0.12.0

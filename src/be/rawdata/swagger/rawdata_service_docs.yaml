@@ -1,0 +1,36 @@
+swagger: "2.0"
+
+info:
+  title: "rawdata service API documentation"
+  version: "1.0"
+
+basePath: /v1.0
+
+schemes:
+ - http
+paths:
+  /clients:
+      get:
+        tags:
+        - public
+        operationId: api.clients.read_client
+        responses:
+          '200':
+            description: 'Fetch clients from the raw data source'
+            schema:
+                $ref: '#/definitions/Client'
+
+# tags are used for organizing operations
+tags:
+- name: public
+  description: Operations available to regular developers
+- name: admins
+  description: Secured Admin-only calls
+
+definitions:
+  Client:
+    type: object
+    properties:
+      id:  { type: string }
+      type: { type: string }
+      last_name: { type: string }
