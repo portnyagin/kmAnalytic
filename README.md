@@ -36,4 +36,4 @@ BE: python 3.7
 - Структура сервиса
 - Requirements.txt
 - flask
-
+- opentrace

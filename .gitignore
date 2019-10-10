@@ -22,4 +22,5 @@ dist
 .pids
 .pants.workdir.file_lock
 venv
+./src/be/sandpit
 ./src/be/RawData/data

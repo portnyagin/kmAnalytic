@@ -13,13 +13,22 @@ paths:
       get:
         tags:
         - public
-        operationId: api.clients.read_client
+        operationId: api.clients.client.read_client
         responses:
           '200':
             description: 'Fetch clients from the raw data source'
             schema:
                 $ref: '#/definitions/Client'
-
+  /:
+    get:
+      tags:
+        - public
+      operationId: api.clients.client.root
+      responses:
+        '200':
+          description: 'Fetch clients from the raw data source'
+          schema:
+            $ref: '#/definitions/Client'
 # tags are used for organizing operations
 tags:
 - name: public
