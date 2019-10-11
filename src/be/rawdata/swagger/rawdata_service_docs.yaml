@@ -13,17 +13,17 @@ paths:
       get:
         tags:
         - public
-        operationId: api.clients.client.read_client
+        operationId: api.clients.client.get_all
         responses:
           '200':
             description: 'Fetch clients from the raw data source'
             schema:
                 $ref: '#/definitions/Client'
-  /:
+  /clients/{id}:
     get:
       tags:
         - public
-      operationId: api.clients.client.root
+      operationId: api.clients.client.get_by_id
       responses:
         '200':
           description: 'Fetch clients from the raw data source'
@@ -41,5 +41,6 @@ definitions:
     type: object
     properties:
       id:  { type: string }
+      # сдедать перекодировку типа из числа в мнемонику
       type: { type: string }
-      last_name: { type: string }
+      is_ip: { type: int }

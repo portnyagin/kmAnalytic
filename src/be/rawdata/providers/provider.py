@@ -11,3 +11,9 @@ class ClientProvider(object):
 
     def read_client(self) -> str:
         return client, 200
+
+    def get_all(self):
+        pass
+
+    def get_by_id(self, id):
+        pass
