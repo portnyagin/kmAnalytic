@@ -1,5 +1,5 @@
 from unittest import TestCase
-from be.rawdata.repository.csv_repository import ClientRepository
+from be.rawdata.repository.client_repository import ClientRepository
 from be.rawdata.domain.domain import  Client
 
 class TestClientRepository(TestCase):

@@ -1,19 +1,12 @@
 from be.rawdata.domain.domain import Client
 
 
-class csvReader:
 
-    def __init__(self, file_name):
-        self._file_name = file_name
 
-    def process(self):
-        pass
-
-    def
 
 
 class ClientRepository:
-    SRC_FILE_PATH="./be/rawdata/data/CLIENTS.csv"
+    SRC_FILE_PATH="CLIENTS.csv"
     def __init__(self):
         self.clients = []
 
