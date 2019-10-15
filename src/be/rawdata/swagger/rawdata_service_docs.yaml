@@ -9,27 +9,49 @@ basePath: /v1.0
 schemes:
  - http
 paths:
+#  /clients:
+#      get:
+#        tags:
+#        - public
+#        operationId: api.clients.client.get_all
+#        responses:
+#          '200':
+#            description: 'Fetch clients from the raw data source'
+#            schema:
+##                type: "array"
+##                items:
+#              $ref: '#/definitions/Client'
+#  /clients/{id}:
+#    get:
+#      tags:
+#        - public
+#      operationId: api.clients.client.get_by_id
+#      responses:
+#        '200':
+#          description: 'Fetch clients from the raw data source'
+#          schema:
+#            $ref: '#/definitions/Client'
+# tags are used for organizing operations
+
   /clients:
-      get:
-        tags:
-        - public
-        operationId: api.clients.client.get_all
-        responses:
-          '200':
-            description: 'Fetch clients from the raw data source'
-            schema:
-                $ref: '#/definitions/Client'
-  /clients/{id}:
     get:
       tags:
-        - public
-      operationId: api.clients.client.get_by_id
+      - "public"
+#      summary: "Finds Pets by status"
+#      description: "Multiple status values can be provided with comma separated strings"
+      operationId: "api.clients.client.read_all"
+      produces:
+      - "application/xml"
+      - "application/json"
       responses:
-        '200':
-          description: 'Fetch clients from the raw data source'
+        200:
+          description: "successful operation"
           schema:
-            $ref: '#/definitions/Client'
-# tags are used for organizing operations
+            type: "array"
+            items:
+              $ref: "#/definitions/Client"
+        400:
+          description: "Invalid value"
 tags:
 - name: public
   description: Operations available to regular developers
@@ -43,4 +65,4 @@ definitions:
       id:  { type: string }
       # сдедать перекодировку типа из числа в мнемонику
       type: { type: string }
-      is_ip: { type: int }
+      is_ip: { type: integer }

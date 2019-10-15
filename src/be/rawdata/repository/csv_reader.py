@@ -11,7 +11,6 @@ class CsvReader:
     def __init__(self):
         pass
 
-    # @staticmethod
     def make_meta(self, header, column_list=None, index_list=None):
         meta = {}
         if column_list is None and index_list is None:
