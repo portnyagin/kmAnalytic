@@ -10,7 +10,7 @@ from connexion.resolver import RestyResolver
 from os import environ
 
 from be.rawdata.providers.provider import ClientProvider
-
+from be.rawdata.repository.client_repository import ClientRepository
 
 
 
@@ -39,8 +39,10 @@ class AppModule(Module):
 
     def configure(self, binder):
         cp = ClientProvider()
-        binder.bind(ClientProvider, to=cp, scope=singleton)
 
+        cl_repo = ClientRepository()
+        binder.bind(ClientProvider, to=cp, scope=singleton)
+        binder.bind(ClientRepository, to=cl_repo, scope=singleton)
 
 def main():
     app = connexion.App(__name__, specification_dir='swagger/')  # Provide the app and the directory of the docs
@@ -53,13 +55,14 @@ def main():
 
     client = app.app.test_client()
 
-    response = client.get('/v1.0')
-    print('%s\n%s%s' % (response.status, response.headers, response.data))
+    # response = client.get('/v1.0')
+    # print('%s\n%s%s' % (response.status, response.headers, response.data))
 
     response = client.get('/v1.0/clients')
     print('%s\n%s%s' % (response.status, response.headers, response.data))
 
     app.run(port=int(environ.get('PORT', 8080)))
+
 
 if __name__ == '__main__':
     main()
