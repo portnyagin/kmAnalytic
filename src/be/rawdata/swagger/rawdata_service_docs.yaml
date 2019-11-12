@@ -1,0 +1,75 @@
+swagger: "2.0"
+
+info:
+  title: "rawdata service API documentation"
+  version: "1.0"
+
+basePath: /v1.0
+
+schemes:
+ - http
+paths:
+#  /clients:
+#      get:
+#        tags:
+#        - public
+#        operationId: api.clients.client.get_all
+#        responses:
+#          '200':
+#            description: 'Fetch clients from the raw data source'
+#            schema:
+##                type: "array"
+##                items:
+#              $ref: '#/definitions/Client'
+  /clients/{clientid}:
+    get:
+      tags:
+        - public
+      operationId: api.clients.client.get_by_id
+      parameters:
+        - name: "clientid"
+          in: "path"
+          description: "Client ID "
+          required: true
+          type: "string"
+#          format: "int64"
+      responses:
+        '200':
+          description: 'Fetch clients from the raw data source'
+          schema:
+            $ref: '#/definitions/Client'
+# tags are used for organizing operations
+
+  /clients:
+    get:
+      tags:
+      - "public"
+#      summary: "Finds Pets by status"
+#      description: "Multiple status values can be provided with comma separated strings"
+      operationId: "api.clients.client.read_all"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Client"
+        400:
+          description: "Invalid value"
+tags:
+- name: public
+  description: Operations available to regular developers
+- name: admins
+  description: Secured Admin-only calls
+
+definitions:
+  Client:
+    type: object
+    properties:
+      id:  { type: string }
+      # сдедать перекодировку типа из числа в мнемонику
+      type: { type: string }
+      is_ip: { type: integer }
