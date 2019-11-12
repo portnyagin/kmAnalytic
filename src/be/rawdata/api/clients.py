@@ -14,10 +14,7 @@ class Client(object):
     # @staticmethod
     @inject
     def read_all(self, data_provider: ClientProvider, client_repo: ClientRepository) -> list:
-        return data_provider.get_all(client_repo)
+        return jsonify(data_provider.get_all(client_repo))
 
-    @inject
-    def get_by_id(self, data_provider: ClientProvider, client_repo: ClientRepository, clientid)-> str:
-        return jsonify(data_provider.get_by_id(client_repo, clientid))
 
 client = Client()

@@ -4,7 +4,6 @@ import logging
 from injector import Module, Injector, inject, singleton
 from flask import Flask, Request, jsonify
 from flask_injector import FlaskInjector
-from flask_marshmallow import Marshmallow
 
 import connexion
 from connexion.resolver import RestyResolver
@@ -12,6 +11,7 @@ from os import environ
 
 from be.rawdata.providers.provider import ClientProvider
 from be.rawdata.repository.client_repository import ClientRepository
+
 
 
 il = logging.getLogger('injector')
@@ -52,9 +52,6 @@ def main():
     injector = Injector([AppModule(app)])
 
     FlaskInjector(app=app.app, injector=injector)
-    # ma = Marshmallow(app)
-
-
 
     client = app.app.test_client()
 
@@ -62,10 +59,6 @@ def main():
     # print('%s\n%s%s' % (response.status, response.headers, response.data))
 
     response = client.get('/v1.0/clients')
-    print('%s\n%s%s' % (response.status, response.headers, response.data))
-
-
-    response = client.get('/v1.0/clients/30002')
     print('%s\n%s%s' % (response.status, response.headers, response.data))
 
     app.run(port=int(environ.get('PORT', 8080)))

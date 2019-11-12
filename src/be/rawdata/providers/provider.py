@@ -1,13 +1,21 @@
 # import requests
 from be.rawdata.repository.client_repository import ClientRepository
-from be.rawdata.domain.domain import client_schemas, client_schema
+
+
+client = {
+    "id": "123",
+    "type": "1",
+    "last_name": "Ivanov"
+}
 
 
 class ClientProvider(object):
-    def get_all(self, clientRepository:ClientRepository):
-        clients = clientRepository.get_all()
-        return  client_schemas.dump(clients)
 
-    def get_by_id(self,clientRepository:ClientRepository, id):
-        client = clientRepository.get_by_id(id)
-        return client_schema.dump (client)
+    def read_client(self) -> str:
+        return client, 200
+
+    def get_all(self, clientRepository:ClientRepository):
+        return clientRepository.get_all()
+
+    def get_by_id(self, id):
+        pass

@@ -21,23 +21,16 @@ paths:
 ##                type: "array"
 ##                items:
 #              $ref: '#/definitions/Client'
-  /clients/{clientid}:
-    get:
-      tags:
-        - public
-      operationId: api.clients.client.get_by_id
-      parameters:
-        - name: "clientid"
-          in: "path"
-          description: "Client ID "
-          required: true
-          type: "string"
-#          format: "int64"
-      responses:
-        '200':
-          description: 'Fetch clients from the raw data source'
-          schema:
-            $ref: '#/definitions/Client'
+#  /clients/{id}:
+#    get:
+#      tags:
+#        - public
+#      operationId: api.clients.client.get_by_id
+#      responses:
+#        '200':
+#          description: 'Fetch clients from the raw data source'
+#          schema:
+#            $ref: '#/definitions/Client'
 # tags are used for organizing operations
 
   /clients:

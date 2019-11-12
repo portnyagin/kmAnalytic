@@ -1,4 +1,4 @@
-from be.rawdata.domain.domain import Client
+from be.rawdata.domain.domain import clientInit
 from be.rawdata.repository.csv_reader import CsvReader
 
 
@@ -11,7 +11,11 @@ class ClientRepository:
         # self.clients = [Client.newClient(*row) for row in data]
         self.clients = []
         for row in data:
-            self.clients.append(Client(*row))
+            cl = clientInit()
+            cl["id"] = row[0]
+            cl["is_ip"] = row[1]
+            cl["is_ip"] = row[2]
+            self.clients.append(cl)
 
     def get_by_id(self, _id):
         # TODO: Find more effective decision. Current code is straightforward
@@ -20,3 +24,4 @@ class ClientRepository:
 
     def get_all(self):
         return self.clients
+
