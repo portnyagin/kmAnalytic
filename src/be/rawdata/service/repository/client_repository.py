@@ -1,5 +1,5 @@
-from be.rawdata.domain.domain import clientInit
-from be.rawdata.repository.csv_reader import CsvReader
+from be.rawdata.service.domain.domain import clientInit
+from be.rawdata.service.repository.csv_reader import CsvReader
 
 
 class ClientRepository:

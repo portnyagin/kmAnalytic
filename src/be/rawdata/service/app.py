@@ -2,15 +2,14 @@
 import logging
 
 from injector import Module, Injector, inject, singleton
-from flask import Flask, Request, jsonify
 from flask_injector import FlaskInjector
 
 import connexion
 from connexion.resolver import RestyResolver
 from os import environ
 
-from be.rawdata.providers.provider import ClientProvider
-from be.rawdata.repository.client_repository import ClientRepository
+from be.rawdata.service.providers.provider import ClientProvider
+from be.rawdata.service.repository.client_repository import ClientRepository
 
 
 

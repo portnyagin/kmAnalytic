@@ -6,7 +6,7 @@ class CsvReader:
     # TODO logger
     # TODO move to relative path
 
-    BASE_PATH = "/home/portnyagin/sources/portnyagin/kmAnalytic/src/be/rawdata/data/"
+    BASE_PATH = "/home/portnyagin/sources/portnyagin/kmAnalytic/src/be/rawdata/service/data/"
 
     def __init__(self):
         pass
