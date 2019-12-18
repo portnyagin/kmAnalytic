@@ -1,6 +1,6 @@
 from flask_injector import inject
-from be.rawdata.providers.provider import ClientProvider
-from be.rawdata.repository.client_repository import ClientRepository
+from be.rawdata.service.providers.provider import ClientProvider
+from be.rawdata.service.repository.client_repository import ClientRepository
 import json
 from flask import jsonify
 

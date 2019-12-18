@@ -1,5 +1,5 @@
 # import requests
-from be.rawdata.repository.client_repository import ClientRepository
+from be.rawdata.service.repository.client_repository import ClientRepository
 
 
 client = {
