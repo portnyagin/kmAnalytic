@@ -6,7 +6,7 @@ authors = ["Alexey Portnyagin <portnyagin@i-teco.ru>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-Flask = "^1.1"
+Flask = "^2.3"
 connection = "^2019.4"
 connexion = "^2.4"
 injector = "^0.17.0"
